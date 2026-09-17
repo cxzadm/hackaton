@@ -95,6 +95,8 @@ export interface SuperCiasFullResponse {
   fechaReporte: string;
 }
 
+export type SuperCiasFinancials = SuperCiasFullResponse;
+
 export async function consultarSuperCias(ruc: string, razonSocial: string): Promise<SuperCiasFullResponse> {
   const cleanRuc = ruc.trim();
 
