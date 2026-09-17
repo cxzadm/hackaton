@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #070d19;
+  --bg-card: #0d1b2a;
+  --border-card: #1e293b;
+  --accent-blue: #0066ff;
+  --accent-cyan: #00d2ff;
+  --accent-emerald: #10b981;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(13, 27, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-glow {
+  background: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 102, 255, 0.15);
+}
+
+.glow-button {
+  background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-button:hover {
+  background: linear-gradient(135deg, #1a75ff 0%, #0052cc 100%);
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.glow-button:active {
+  transform: translateY(0);
+}
+
+/* Shimmer & Pulse Animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070d19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0066ff;
+}
